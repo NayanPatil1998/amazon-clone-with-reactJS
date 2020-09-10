@@ -9,20 +9,25 @@
     max-height: 400px;
     background-color: white;
     z-index: 1;
+    
 
 }
 .product__info {
-    height: 100px;
-    margin-bottom: 15px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    width: 60%;
+
   }
   
   .product__price {
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .product__rating {
-    display: flex;
     color: #f0c14b;
+
   }
   
   .product > img {
@@ -34,6 +39,9 @@
   
   .product > button {
     background-color: #f0c14b;
+    width: 120px;
+    height: 25;
+    margin: 10px auto;
     border: 1px solid;
     border-color: #a88734 #9c7e31 #846a29;
   }
