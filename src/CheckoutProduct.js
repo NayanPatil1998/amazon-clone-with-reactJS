@@ -4,7 +4,7 @@ import StarIcon from "@material-ui/icons/Star";
 import { useStateValue } from "./StateProvider";
 
 
-const CheckoutProduct = forwardRef(({ id, image, price, rating, title }, ref) => {
+const CheckoutProduct = forwardRef(({ id, image, price, rating, title, hideButton }, ref) => {
   const [{ basket }, dispatch] = useStateValue();
 
   const itemRef= useRef(null)
@@ -22,7 +22,7 @@ const CheckoutProduct = forwardRef(({ id, image, price, rating, title }, ref) =>
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}</p>
         <p className="checkoutProduct__price">
-          <small>$</small> <strong>{price}</strong>
+          <small>₹</small> <strong>{price}</strong>
         </p>
         <div className="checkoutProduct__rating">
           {Array(rating)
@@ -31,7 +31,11 @@ const CheckoutProduct = forwardRef(({ id, image, price, rating, title }, ref) =>
               <StarIcon key={index} />
             ))}
         </div>
-        <button onClick={removeFromBasket}>Remove from basket</button>
+        {
+          !hideButton && (
+            <button onClick={removeFromBasket}>Remove from basket</button>
+          )
+        }
       </div>
     </div>
   );
